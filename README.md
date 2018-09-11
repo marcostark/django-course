@@ -19,8 +19,26 @@
     |___wasgi.py
     manage.py
 
-####
+#### Criando primeira app
+    python manage.py startapp contas
+    
+* Após criar a app, será necessario registrar a aplicação 
+no settings da aplicação principal
 
+#### Criação do banco de dados
+    python manage.py migrate
+    
+#### Rodar a aplicação
+    python manage.py runserver
+    
+#### Criar superusuario
+    python manage.py createsuperuser
+    
+## URL's
+    * O processo para chegar em uma view começa pela url... 
+    
+## Views
+    *
 
    
     
