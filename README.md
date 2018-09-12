@@ -35,7 +35,8 @@ no settings da aplicação principal
     python manage.py createsuperuser
     
 ## URL's
-    * O processo para chegar em uma view começa pela url... 
+   * O processo para chegar em uma view começa pela url. As url's são definidas no 
+   arquivo <em>urls.py</em> do projeto principal
     
 ## Views
     *
@@ -71,7 +72,23 @@ no settings da aplicação principal
     admin.site.register(Categoria) # Registrando
 
 
+## Operações no Banco de Dados [Documentação](https://docs.djangoproject.com/en/2.1/topics/db/queries/)
+Uma vez criados os modelos de dados, o Django automaticamente fornece uma API de abstração 
+de banco de dados que permite criar, recuperar, atualizar e excluir objetos.
+A Manager é a interface através da qual as operações de consulta do banco de dados são fornecidas 
+aos modelos do Django. Pelo menos um Managerexiste para cada modelo em um aplicativo Django.
 
+#### ModelForm
+
+ * Criar arquivo chamado <em>form.py</em>.
+ 
+A classe criada para o formulario herdara de ModelForm, que terá a classe Meta que recebe
+um model(Do qual será criado o formulario). A Form classe gerada terá um campo de formulário 
+para cada campo de modelo especificado, na ordem especificada no atributo field.
+
+
+    
+    
 
 
    
