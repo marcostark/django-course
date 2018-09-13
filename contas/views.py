@@ -34,3 +34,24 @@ def nova_transacao(request):
     data['form'] = form
 
     return render(request, 'contas/form.html',data)
+
+
+def update(request, pk):
+    data = {}
+    transacao = Transacao.objects.get(pk=pk)
+    form = form = TransacaoForm(request.POST or None, instance=transacao) #Passar o formulario preenchido
+
+    # Verificar se o form é valido
+    if form.is_valid():
+        form.save()  # Salva
+        return redirect('url_listagem')  # E redireciona para a listagem
+
+    data['form'] = form
+    data['transacao'] = transacao # Enviando a transação pela URL, para ser possivel remover
+
+    return render(request, 'contas/form.html', data)
+
+def delete(request, pk):
+    transacao = Transacao.objects.get(pk=pk) # Buscando o objeto no banco pelo id
+    transacao.delete() # Removendo a transação
+    return redirect('url_listagem')  # E redireciona para a listagem
